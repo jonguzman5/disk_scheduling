@@ -1,5 +1,5 @@
 # disk_scheduling
-Angeline  Infante
+Angeline Infante
 Jose Bautista
 Elizabeth Brocs
 Jonathan Guzman
