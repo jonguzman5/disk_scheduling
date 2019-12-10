@@ -1,3 +1,13 @@
+private static int clipper(int number, int threshold) {
+		if(number > threshold)
+			number = 0;
+		if(number < 0)
+			number = threshold;
+
+		return number;
+	}
+
+
 static void SSTF(int[] requests, int initialHeadPosition) {
 		int size = requests.length - 1;
 		int seekTime = 0;
