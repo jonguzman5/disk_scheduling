@@ -1,3 +1,19 @@
+static private int findIndex(int[] array, int number) {	
+		int i;
+		
+		if(array[0] >= number)
+			return 0;
+		
+		for(i = 1; i < array.length - 2; i++) {
+			if(array[i+1] >= number)
+				return i;
+		}
+		return i;
+	}
+
+
+
+
 static void SCAN(int[] requests, int initialHeadPosition, int previousHeadPosition) {
 		Arrays.sort(requests);
 		int index = findIndex(requests, initialHeadPosition);

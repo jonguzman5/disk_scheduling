@@ -1,3 +1,16 @@
+static private int findIndex(int[] array, int number) {	
+		int i;
+		
+		if(array[0] >= number)
+			return 0;
+		
+		for(i = 1; i < array.length - 2; i++) {
+			if(array[i+1] >= number)
+				return i;
+		}
+		return i;
+	}
+
 private static int clipper(int number, int threshold) {
 		if(number > threshold)
 			number = 0;
@@ -16,23 +29,8 @@ static void SSTF(int[] requests, int initialHeadPosition) {
 		Arrays.sort(requests);
 		
 		// Get the i from initialHeadPosition
-		for(int i = 0; i < size; i++) {
-			if(i == 0 && requests[i] > initialHeadPosition) {
-				index = 0;
-				break;
-			}
-			
-			if(requests[i] == initialHeadPosition) {
-				index = i;
-				visited[index] = true;
-				break;
-			}
-			
-			if(requests[i+1] > initialHeadPosition) {
-				index = i;
-				break;
-			} 
-		}
+		index = findIndex(requests, initialHeadPosition);
+
 		
 		System.out.printf("%d-> ", initialHeadPosition);
 		
