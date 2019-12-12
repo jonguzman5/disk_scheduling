@@ -1,3 +1,7 @@
+//edits by KatKoder
+
+import java.util.*;  //added b/c "Arrays.sort(requests);" couldn't work without this
+
 static private int findIndex(int[] array, int number) {	
 		int i;
 		
@@ -14,7 +18,7 @@ static private int findIndex(int[] array, int number) {
 
 
 
-static void SCAN(int[] requests, int initialHeadPosition, int previousHeadPosition) {
+static void algorithmSCAN(int[] requests, int initialHeadPosition, int previousHeadPosition) {  //added "algorithm" b/c SCAN appeared as a constructor
 		Arrays.sort(requests);
 		int index = findIndex(requests, initialHeadPosition);
 		boolean toRight = initialHeadPosition - previousHeadPosition < 0;
@@ -121,3 +125,17 @@ static void SCAN(int[] requests, int initialHeadPosition, int previousHeadPositi
 		
 		System.out.printf("Seek Time: %d", headMovement);
 	}
+
+
+public static void main(String [] args) { //added main method and main body to test above code
+	
+	Random rand = new Random(); //recycled from Jonathan's FCFS code
+	int arrayOfRequests [] = new int [1000];
+	
+	for(int i = 0; i < arrayOfRequests.length; i++){
+		  arrayOfRequests[i] = rand.nextInt(5000);
+	}
+	algorithmSCAN(arrayOfRequests, rand.nextInt(5000), rand.nextInt(5000));
+	
+	
+}
