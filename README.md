@@ -1,6 +1,6 @@
 # disk_scheduling
 Angeline Infante
 Jose Bautista
-Elizabeth Brocs
+Elizabeth Bocs
 Jonathan Guzman
 Joshua Collado
