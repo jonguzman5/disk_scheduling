@@ -1,3 +1,8 @@
+//edits by KatKoder
+import java.util.*; //added so Arrays.sort() can work
+public class SSTF{
+
+
 static private int findIndex(int[] array, int number) {	
 		int i;
 		
@@ -21,7 +26,7 @@ private static int clipper(int number, int threshold) {
 	}
 
 
-static void SSTF(int[] requests, int initialHeadPosition) {
+static void algorithmSSTF(int[] requests, int initialHeadPosition) { //added "algorithm" to name SSTF so would not appear as constructor
 		int size = requests.length - 1;
 		int seekTime = 0;
 		int left = 0,right = 0,index = 0;
@@ -75,4 +80,14 @@ static void SSTF(int[] requests, int initialHeadPosition) {
 		}
 		System.out.printf("Seek Time: %d\n", seekTime);
 	}
-
+	
+	public static void main(String [] args) { //added main method and body to execute above code
+		
+		Random rand = new Random(); //recycled from Jonathan's FCFS code
+		int arrayOfRequests [] = new int [1000];
+		
+		for(int i = 0; i < arrayOfRequests.length; i++){
+			  arrayOfRequests[i] = rand.nextInt(5000);
+		}
+		algorithmSSTF(arrayOfRequests, rand.nextInt(5000));
+}
